@@ -1,0 +1,8 @@
+{% extends "invoices.base.html" %}
+{% block invoices %}
+<section class="column__invoice invoice">
+  {% include "invoice-main/header-content.html" %}
+  {% include "invoice-main/main-content.html" %}
+  {% include "invoice-main/footer-content.html" %}
+</section>
+{% endblock %}

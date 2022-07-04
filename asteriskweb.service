@@ -1,0 +1,20 @@
+[Unit]
+Description=WEB API CRM - making your environment variables rad
+Documentation=https://api.crm.etienne-services.fr
+After=network.target
+
+[Service]
+Type=simple
+User=root
+PermissionsStartOnly=true
+ExecStartPre=/bin/mkdir -p /var/log/asteriskweb
+ExecStartPre=/bin/chown root:systemd-journal /var/log/asteriskweb
+ExecStartPre=/bin/chmod 755 /var/log/asteriskweb
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=asteriskweb        
+ExecStart=yarn --cwd /home/nodejs/asteriskweb start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

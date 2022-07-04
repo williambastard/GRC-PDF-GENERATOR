@@ -1,0 +1,20 @@
+[Unit]
+Description=WEB API CRM - making your environment variables rad
+Documentation=https://api.crm.etienne-services.fr
+After=network.target
+
+[Service]
+Type=simple
+User=root
+PermissionsStartOnly=true
+ExecStartPre=/bin/mkdir -p /var/log/voipapi
+ExecStartPre=/bin/chown root:systemd-journal /var/log/voipapi
+ExecStartPre=/bin/chmod 755 /var/log/voipapi
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=voipapi        
+ExecStart=yarn --cwd /home/nodejs/voipapi start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,23 @@
+{% block totalsblock %}
+<div class="column__invoice totaux">
+  <div class="row__invoice full titre center">TOTAL DÛ</div>
+  <div class="column__invoice lignes">
+    <div class="row__invoice ligne space-between reduction">
+      <span><b>RÉDUCT° H.T</b></span>
+      <span><b>{{ doc.produits.total.prixReduc | default("0") | number_format(2, '.', ',') }} &euro;</b></span>
+    </div>
+    <div class="row__invoice ligne space-between">
+      <span>PRIX H.T</span>
+      <span>{{ doc.produits.total.prixHTTotal | default("0") | number_format(2, '.', ',') }} &euro;</span>
+    </div>
+    <div class="row__invoice ligne space-between">
+      <span>COÛT TVA</span>
+      <span>{{ (doc.produits.total.prixTTCTotal - doc.produits.total.prixHTTotal) | default("0") | number_format(2, '.', ',') }} &euro;</span>
+    </div>
+    <div class="row__invoice ligne space-between lastprice">
+      <span><b>PRIX TTC</b></span>
+      <span><b>{{ doc.produits.total.prixTTCTotal | default("0") | number_format(2, '.', ',') }} &euro;</b></span>
+    </div>
+  </div>
+</div>
+{% endblock %}

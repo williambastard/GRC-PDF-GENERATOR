@@ -1,0 +1,353 @@
+/* main.css */
+body {
+	padding    : 0;
+}
+
+hr {
+	border: 1px solid #eeeeee;
+	width : -webkit-fill-available;
+}
+
+section.invoice {
+	display: flex;
+	font-size  : 8pt;
+	font-family: Arial, Helvetica, sans-serif;
+	color      : #333333;
+}
+
+header.invoice-header .details {
+	border : 1px solid #eee;
+	padding: 5px;
+	width  : -webkit-fill-available;
+	margin : 5px 0;
+}
+
+header.invoice-header .details span {
+	margin: 5px 0 0;
+}
+
+header.invoice-header .details div {
+	justify-content: space-between;
+	display        : flex;
+}
+
+footer>div {
+	margin: 10px 0;
+}
+
+
+footer .border {
+	border : 2px solid #f0f0f0;
+	padding: 10px;
+}
+
+footer div.details {
+	padding: 0 10px;
+}
+
+footer .signature span {
+	padding: 15px 0;
+}
+
+footer .signature img {
+	/*
+			border: 3px solid black;
+			padding: 10px;
+			width: 256px;*/
+}
+
+footer .authentification {
+	display        : flex;
+	flex-direction : column;
+	align-items    : center;
+	justify-content: center;
+	align-content  : flex-start;
+	flex-wrap      : nowrap;
+}
+
+footer .authentification img {
+	border: 5px solid;
+	margin: 15px 0;
+	width : 132px;
+}
+
+footer .authentification span {
+	text-align: center;
+}
+
+footer .legislation {
+	text-align: center;
+}
+
+footer .legislation span {
+	text-align: center;
+}
+
+
+section .full-header.invoice-header {
+	color          : rgb(70, 70, 70);
+	width          : -webkit-fill-available;
+	text-align     : right;
+	padding        : 0.5em;
+	justify-content: space-between;
+}
+
+section .full-header.invoice-header span {
+	font-size: xx-large;
+}
+
+section .invoice-header.invoice-header .adresses {
+	width : -webkit-fill-available;
+	margin: 5px;
+}
+
+section .invoice-header.invoice-header .adresses .siege {
+	background-color: #ffd4a0;
+	padding         : 10px;
+}
+
+section .invoice-header.invoice-header .adresses .client {
+	margin: 20px 5px;
+}
+
+section .invoice-header.invoice-header .adresses .client .adresse-facturation,
+section .invoice-header.invoice-header .adresses .client .adresse-intervention {
+	padding: 10px;
+}
+
+section .invoice-header.invoice-header .adresses .client .adresse-facturation {
+	background-color: rgb(196, 231, 255);
+}
+
+section .invoice-header.invoice-header .adresses .client span {
+	align-self: flex-start;
+}
+
+
+/* comunnes */
+
+
+* .column__invoice {
+	display       : flex;
+	flex-direction: column;
+}
+
+* .column__invoice-reverse {
+	display       : flex;
+	flex-direction: column-reverse;
+}
+
+* .row__invoice {
+	display       : flex;
+	flex-direction: row;
+}
+
+* .row__invoice-reverse {
+	flex-direction: row-reverse;
+	align-content : center;
+	align-items   : center;
+
+}
+
+* .alignitems-content-center {
+	align-content: flex-end;
+	align-items  : flex-end;
+}
+
+* .full {
+	width: -webkit-fill-available;
+}
+
+* .adresse {
+	padding: 0;
+	margin : 0;
+}
+
+* .space-between {
+	justify-content: space-between;
+}
+
+* .justify-center {
+	justify-content: center;
+}
+
+* .align-items-center {
+	align-items: center;
+}
+
+.invoice .right {
+	text-align: right;
+}
+
+* .center {
+	text-align: center;
+}
+
+
+* .border th {
+	border    : 1px solid #333333;
+	color     : white;
+	background: #333333;
+	padding   : 5px;
+}
+
+* .border td {
+	border : 1px solid #CFD1D2;
+	padding: 5px;
+}
+
+/* table */
+.m10p {
+	margin: 10px 0;
+}
+
+.p05em {
+	padding: 0.5em
+}
+
+.description {
+	text-align: left;
+	width     : calc(100% / 1.5);
+}
+
+.produit span {
+	margin-left: 5px
+}
+
+.qte,
+.red,
+.tva,
+.pu {
+	width: calc(100% / 12);
+}
+
+.reduction {
+	background: #ffd4a0;
+	border    : 1px solid #fdbf73 !important;
+}
+
+.lastprice {
+	background: #c4e7ff;
+	color     : #006097;
+	border    : 1px solid #77c3f7 !important;
+}
+
+.table-container div {
+	box-sizing: border-box;
+}
+
+.table-container {
+	display: block;
+}
+
+.flex-table {
+	display    : flex;
+	flex-flow  : row wrap;
+	border-left: solid 1px #d9d9d9;
+	transition : 0.5s;
+}
+
+.flex-table:first-of-type .flex-row {
+	background  : #1976D2;
+	color       : white;
+	border-color: #1565C0;
+}
+
+.flex-table.row:not(.total):nth-child(odd) .flex-row {
+	background: #f4f2f1;
+}
+
+.flex-row {
+	padding      : 0.5em 0.5em;
+	border-right : solid 1px #d9d9d9;
+	border-bottom: solid 1px #d9d9d9;
+}
+
+
+.recapitulatif {
+	width          : -webkit-fill-available;
+	display        : flex;
+	flex-direction : row;
+	flex-wrap      : wrap;
+	justify-content: space-between;
+	align-items    : center;
+}
+
+.paiements {
+	width: 66%;
+}
+
+.totaux {
+	width: 33%
+}
+
+
+.paiements .titre,
+.totaux .titre,
+.cgu .titre {
+	background  : #1976D2;
+	color       : white;
+	border-color: #1565C0;
+	padding     : 5px;
+	margin      : 5px 0 0;
+}
+
+.paiements .titre.center,
+.totaux .titre.center,
+.cgu .titre.center {
+	justify-content: center;
+}
+
+.paiements .lignes,
+.totaux .lignes,
+.cgu .lignes {
+	border: 1px solid #eee;
+}
+
+.paiements .lignes .ligne,
+.totaux .lignes .ligne,
+.cgu .lignes .ligne {
+	border : 1px solid #f2f2f2;
+	padding: 5px;
+}
+
+/* impression */
+
+/* override styles when printing */
+@media print {
+	body {
+		-webkit-print-color-adjust: exact;
+		color                     : #000;
+		background-color          : #fff;
+	}
+
+	@page {
+		size  : A4;
+		height: 100%;
+		margin: 0.5cm
+	}
+
+	footer,
+	.recapitulatifs {
+		bottom           : 0;
+		display          : block;
+		page-break-inside: avoid;
+		page-break-after : auto;
+		page-break-before: auto;
+	}
+
+	.flex-table.row.produits:nth-child(13n) {
+		page-break-inside: avoid;
+		page-break-after : auto;
+		page-break-before: auto;
+	}
+
+
+	.flex-row {
+		orphans: 1;
+	}
+
+	.mn35p {
+		margin: 0 0 auto;
+	}
+}

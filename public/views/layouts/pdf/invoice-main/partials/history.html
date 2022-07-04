@@ -1,0 +1,26 @@
+{% block historyblock %}
+<div class="column__invoice paiements">
+    <div class="row__invoice full titre">Règlement(s) effectué(s)</div>
+    <div class="column__invoice lignes">
+        {% for paiement in doc.paiements %}
+        <div class="row__invoice ligne">
+            <span>Paiement le <b>{{ paiement.date | default("") | date('d/m/Y à H:i:s') }}</b> en
+                {% if (paiement.type == "vir") %}
+                <b>VIREMENT ({{ paiement.details_last4 }})</b>
+                {% endif %}
+                {% if (paiement.type == "cb") %}
+                <b>CB ({{ paiement.details_last4 }})</b>
+                {% endif %}
+                {% if (paiement.type == "esp") %}
+                <b>ESPÈCES</b>
+                {% endif %}
+                {% if (paiement.type == "chq") %}
+                <b>CHÈQUE</b>
+                {% endif %}
+                de <b>{{ paiement.montant | default("0") | number_format(2, '.', ',') }}&nbsp;</b>&euro;
+            </span>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% block productcontent %}
+{% include "invoice-main/partials/products.html" %}
+<section class="recapitulatifs">
+    <section class="row__invoice full recapitulatif">
+        {% include "invoice-main/partials/history.html" %}
+        {% include "invoice-main/partials/total.html" %}
+        {% include "invoice-main/partials/cgu.html" %}
+    </section>
+</section>
+{% endblock %}
